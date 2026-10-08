@@ -3,1433 +3,817 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Restu Slamet Triwijono, S.Kom., M.T. — Senior IT, Data Analytics, Data Engineering and Fullstack Development.">
+  <title>About Me | Restu Slamet Triwijono — MY PERSONAL & PORTFOLIO</title>
 
-  <title>About Me | Restu Slamet Triwijono</title>
-
-  <meta
-    name="description"
-    content="Restu Slamet Triwijono - Senior IT Professional, Data Analyst, Data Engineer, Fullstack Developer, IT Business Development Specialist and Enterprise Infrastructure Architect."
-  >
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b0f29;
-      --bg-soft: #111633;
-      --primary: #6a5acd;
-      --secondary: #4169e1;
-      --blue: #3b82f6;
-      --purple: #8b5cf6;
-      --text: #ffffff;
-      --muted: #9ca7c7;
-      --border: rgba(255,255,255,.10);
-      --gradient: linear-gradient(90deg,#6a5acd,#4169e1);
+      --bg: #0B0F29;
+      --bg-soft: #111735;
+      --card: rgba(255,255,255,.055);
+      --border: rgba(255,255,255,.11);
+      --text: #fff;
+      --muted: #aeb6d4;
+      --blue: #4169E1;
+      --purple: #6A5ACD;
+      --gradient: linear-gradient(90deg,#6A5ACD,#4169E1);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background:
-        radial-gradient(
-          circle at 75% 15%,
-          rgba(65,105,225,.18),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 10% 70%,
-          rgba(106,90,205,.12),
-          transparent 30%
-        ),
+        radial-gradient(circle at 15% 10%, rgba(106,90,205,.16), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(65,105,225,.13), transparent 28%),
         var(--bg);
-
       color: var(--text);
       font-family: "Inter", sans-serif;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* =========================
-       NAVBAR
-    ========================== */
+    a { text-decoration: none; }
 
     .navbar {
-      padding: 20px 0;
       background: rgba(11,15,41,.72);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       color: #fff;
       font-weight: 800;
-      letter-spacing: .5px;
-      text-decoration: none;
+      letter-spacing: .12em;
+      font-size: .95rem;
     }
 
-    .brand-logo {
-      width: 34px;
-      height: 34px;
+    .brand:hover { color: #fff; }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 9px;
     }
 
     .nav-link {
-      color: #aab3d0 !important;
-      font-size: 14px;
+      color: #c8cee4 !important;
+      font-size: .88rem;
       font-weight: 500;
-      margin: 0 10px;
-      transition: .3s;
+      transition: .25s ease;
     }
 
-    .nav-link:hover {
-      color: #fff !important;
-    }
+    .nav-link:hover,
+    .nav-link.active { color: #fff !important; }
 
-    .back-btn {
-      padding: 11px 20px;
-      border-radius: 50px;
+    .btn-gradient {
       color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
       background: var(--gradient);
-      transition: .3s;
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 20px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(65,105,225,.25);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
-    .back-btn:hover {
+    .btn-gradient:hover {
       color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(65,105,225,.30);
+      box-shadow: 0 16px 36px rgba(65,105,225,.35);
     }
 
-    /* =========================
-       HERO
-    ========================== */
+    .hero {
+      position: relative;
+      padding: 150px 0 100px;
+    }
 
-    .about-hero {
-      padding: 120px 0 80px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      left: -280px;
+      top: 70px;
+      border-radius: 50%;
+      background: rgba(106,90,205,.12);
+      filter: blur(100px);
+      pointer-events: none;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.035);
-      color: #aab5d5;
-      font-size: 11px;
+      color: #aebfff;
+      background: rgba(65,105,225,.1);
+      border: 1px solid rgba(65,105,225,.22);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: .78rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    .eyebrow span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #5f8dff;
-      box-shadow: 0 0 12px #5f8dff;
-    }
-
-    .hero-title {
-      margin-top: 24px;
-      font-size: clamp(42px,6vw,72px);
-      line-height: 1.02;
-      letter-spacing: -3px;
+    .hero h1 {
+      margin: 22px 0 15px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.04;
       font-weight: 800;
+      letter-spacing: -.045em;
     }
 
     .gradient-text {
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        #8eaaff,
-        #8b5cf6
-      );
-
+      background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .hero-description {
-      max-width: 680px;
-      margin-top: 25px;
+    .lead-copy {
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
+      max-width: 760px;
+      font-size: 1.04rem;
     }
 
-    /* =========================
-       PROFILE CARD
-    ========================== */
-
-    .profile-card {
+    /* Premium profile photo */
+    .profile-stage {
       position: relative;
-      padding: 35px;
-      border-radius: 30px;
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.07),
-          rgba(255,255,255,.025)
-        );
-      box-shadow: 0 35px 80px rgba(0,0,0,.35);
-      overflow: hidden;
+      width: min(390px, 82vw);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
     }
 
-    .profile-card::before {
+    .profile-stage::before {
       content: "";
       position: absolute;
-      width: 250px;
-      height: 250px;
-      right: -100px;
-      top: -100px;
+      inset: 8%;
       border-radius: 50%;
-      background: rgba(65,105,225,.18);
-      filter: blur(50px);
+      background: conic-gradient(
+        from 0deg,
+        #6A5ACD,
+        #4169E1,
+        #72a7ff,
+        #6A5ACD
+      );
+      filter: blur(18px);
+      opacity: .42;
+      animation: glowPulse 4s ease-in-out infinite;
     }
 
-    .profile-initial {
-      width: 115px;
-      height: 115px;
+    .profile-ring {
+      position: absolute;
+      inset: 4%;
       border-radius: 50%;
-      display: flex;
+      padding: 5px;
+      background: conic-gradient(
+        from 25deg,
+        #6A5ACD,
+        #4169E1,
+        #91b8ff,
+        #6A5ACD
+      );
+      box-shadow:
+        0 0 35px rgba(65,105,225,.28),
+        0 25px 80px rgba(0,0,0,.4);
+      animation: ringFloat 7s ease-in-out infinite;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 42%;
+      border-radius: 50%;
+      border: 6px solid var(--bg);
+      background: linear-gradient(135deg,#6A5ACD,#4169E1);
+    }
+
+    .profile-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
-
-      font-size: 42px;
-      font-weight: 800;
-
+      border-radius: 50%;
       background: var(--gradient);
-      box-shadow:
-        0 20px 50px rgba(65,105,225,.35);
-    }
-
-    .profile-name {
-      font-size: 25px;
+      color: #fff;
+      font-size: clamp(3rem, 8vw, 5.5rem);
       font-weight: 800;
-      margin-bottom: 8px;
+      letter-spacing: -.05em;
+      border: 6px solid var(--bg);
     }
 
-    .profile-role {
-      color: #8eaaff;
-      font-size: 13px;
-      line-height: 1.7;
-      font-weight: 600;
+    .profile-stage::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      right: 8%;
+      top: 22%;
+      border-radius: 50%;
+      background: #71a4ff;
+      box-shadow: 0 0 0 8px rgba(113,164,255,.1), 0 0 28px #4169E1;
     }
 
-    /* =========================
-       SECTION
-    ========================== */
+    .profile-badge {
+      position: absolute;
+      z-index: 5;
+      left: 2%;
+      bottom: 8%;
+      padding: 13px 17px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(17,23,53,.84);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 18px 45px rgba(0,0,0,.3);
+    }
+
+    .profile-badge strong {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .profile-badge span {
+      color: #9fa9ca;
+      font-size: .72rem;
+    }
+
+    @keyframes glowPulse {
+      0%,100% { transform: scale(.97); opacity: .32; }
+      50% { transform: scale(1.04); opacity: .52; }
+    }
+
+    @keyframes ringFloat {
+      0%,100% { transform: rotate(0deg) translateY(0); }
+      50% { transform: rotate(2deg) translateY(-6px); }
+    }
 
     .section {
-      padding: 90px 0;
-      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 95px 0;
+      scroll-margin-top: 80px;
     }
 
-    .section-title {
-      font-size: clamp(32px,5vw,48px);
+    .section-label {
+      color: #8da8ff;
+      font-size: .76rem;
       font-weight: 800;
-      letter-spacing: -1.5px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .glass-card {
+      height: 100%;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.16);
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(113,164,255,.3);
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(65,105,225,.12);
+      border: 1px solid rgba(65,105,225,.2);
+      color: #91b8ff;
       margin-bottom: 18px;
     }
 
-    .section-description {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    /* =========================
-       SKILL CARDS
-    ========================== */
-
-    .skill-card {
-      height: 100%;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: rgba(255,255,255,.025);
-      transition: .3s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(100,130,255,.30);
-      background: rgba(255,255,255,.045);
-    }
-
-    .skill-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      background: var(--gradient);
-    }
-
-    .skill-card h3 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
     .skill-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
     }
 
-    .skill-list li {
-      color: var(--muted);
-      font-size: 13px;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
+    .skill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #c8cee4;
+      font-size: .74rem;
     }
-
-    .skill-list li:last-child {
-      border-bottom: 0;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================== */
 
     .timeline {
       position: relative;
-      padding-left: 30px;
+      padding-left: 28px;
       border-left: 1px solid rgba(255,255,255,.12);
     }
 
     .timeline-item {
       position: relative;
-      padding: 0 0 45px 25px;
+      margin-bottom: 34px;
     }
 
     .timeline-item::before {
       content: "";
       position: absolute;
-      left: -36px;
-      top: 5px;
       width: 11px;
       height: 11px;
       border-radius: 50%;
-      background: #638cff;
-      box-shadow: 0 0 18px rgba(99,140,255,.8);
+      left: -34px;
+      top: 8px;
+      background: #4169E1;
+      box-shadow: 0 0 0 6px rgba(65,105,225,.12);
     }
 
-    .timeline-period {
-      color: #718fff;
-      font-size: 11px;
+    .timeline-date {
+      color: #91b8ff;
+      font-size: .78rem;
       font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
-    .timeline-item h3 {
-      margin: 8px 0 5px;
-      font-size: 19px;
-      font-weight: 700;
+    .timeline h3 {
+      margin: 4px 0;
+      font-size: 1.05rem;
     }
 
     .timeline-company {
-      color: #c4cbea;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      color: #aeb6d4;
+      font-size: .85rem;
     }
 
-    .timeline-item p {
+    .timeline p {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-      margin: 0;
+      font-size: .86rem;
+      margin-top: 9px;
     }
 
-    /* =========================
-       EDUCATION
-    ========================== */
-
-    .education-card {
-      height: 100%;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(255,255,255,.025);
+    .competency {
+      padding: 16px 18px;
+      border-left: 3px solid #4169E1;
+      background: rgba(255,255,255,.035);
+      border-radius: 0 12px 12px 0;
+      color: #dbe0f2;
+      margin-bottom: 10px;
     }
-
-    .education-year {
-      color: #7696ff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .education-card h3 {
-      font-size: 19px;
-      margin: 10px 0 6px;
-      font-weight: 700;
-    }
-
-    .education-card h4 {
-      font-size: 13px;
-      color: #c2c9e0;
-      margin-bottom: 12px;
-    }
-
-    .education-card p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
 
     .contact-panel {
-      padding: 55px;
+      position: relative;
+      overflow: hidden;
+      padding: 45px;
       border-radius: 30px;
-      text-align: center;
       background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(105,90,205,.28),
-          transparent 55%
-        ),
-        rgba(255,255,255,.035);
-      border: 1px solid var(--border);
+        radial-gradient(circle at 85% 20%, rgba(113,164,255,.25), transparent 35%),
+        linear-gradient(135deg, rgba(106,90,205,.24), rgba(65,105,225,.16));
+      border: 1px solid rgba(255,255,255,.12);
     }
+
+    .contact-panel p { color: #c1c9df; }
 
     .contact-item {
-      color: #b3bddb;
-      font-size: 13px;
-      margin: 5px 15px;
+      color: #dbe0f2;
+      word-break: break-word;
     }
-
-    .contact-item strong {
-      color: #fff;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
 
     footer {
       padding: 35px 0;
-      border-top: 1px solid rgba(255,255,255,.05);
-      color: #707b9e;
-      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #7f89aa;
+      font-size: .78rem;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
+    .navbar-toggler {
+      border-color: rgba(255,255,255,.15);
+    }
 
-    @media (max-width: 991px) {
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
 
-      .about-hero {
-        padding-top: 90px;
-      }
-
-      .profile-card {
-        margin-top: 45px;
-      }
-
+    @media (max-width: 991.98px) {
+      .hero { padding-top: 125px; }
+      .hero .profile-stage { margin-top: 55px; }
       .navbar-collapse {
-        display: none !important;
+        padding: 18px 0;
       }
-
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: 575.98px) {
+      .hero { padding-bottom: 65px; }
+      .section { padding: 70px 0; }
+      .profile-stage { width: min(320px, 82vw); }
+      .profile-badge { left: -2%; bottom: 5%; }
+      .contact-panel { padding: 28px; }
+      .btn-gradient { width: 100%; }
+    }
 
-      .about-hero {
-        padding: 70px 18px;
-      }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
 
-      .hero-title {
-        font-size: 43px;
-        letter-spacing: -2px;
-      }
-
-      .section {
-        padding: 70px 18px;
-      }
-
-      .profile-card {
-        padding: 25px;
-      }
-
-      .contact-panel {
-        padding: 35px 20px;
-      }
-
+    .reveal.show {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVBAR
-========================== -->
-
-<nav class="navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-
-    <a href="index.html" class="brand">
-
-      <svg
-        class="brand-logo"
-        viewBox="0 0 40 40"
-        fill="none"
-      >
-        <path
-          d="M20 2L23.5 12.5L34 8L27.5 17.5L38 20L27.5 22.5L34 32L23.5 27.5L20 38L16.5 27.5L6 32L12.5 22.5L2 20L12.5 17.5L6 8L16.5 12.5L20 2Z"
-          fill="url(#logoGradient)"
-        />
-
-        <defs>
-          <linearGradient
-            id="logoGradient"
-            x1="2"
-            y1="2"
-            x2="38"
-            y2="38"
-          >
-            <stop stop-color="#8B5CF6"/>
-            <stop offset="1" stop-color="#4169E1"/>
-          </linearGradient>
-        </defs>
-      </svg>
-
+    <a class="brand d-flex align-items-center" href="index.html">
+      <span class="brand-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M14 2.5L16.3 9.4L23.3 7.1L18.8 12.9L25.5 16L18.2 17.2L20.2 24.2L14 19.7L8 25L9.7 17.6L2.5 16L9.1 12.6L4.7 7.1L11.7 9.4L14 2.5Z" fill="#6A5ACD"/>
+          <circle cx="14" cy="14" r="4" fill="#4169E1"/>
+        </svg>
+      </span>
       MY PERSONAL &amp; PORTFOLIO
-
     </a>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="d-none d-lg-flex ms-auto align-items-center">
-
-      <a href="#profile" class="nav-link">
-        Profile
-      </a>
-
-      <a href="#skills" class="nav-link">
-        Skills
-      </a>
-
-      <a href="#experience" class="nav-link">
-        Experience
-      </a>
-
-      <a href="#education" class="nav-link">
-        Education
-      </a>
-
-      <a href="index.html" class="back-btn ms-3">
-        Back to Home
-      </a>
-
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item mt-3 mt-lg-0">
+          <a class="btn-gradient d-inline-block text-center" href="index.html">Back to Home</a>
+        </li>
+      </ul>
     </div>
-
   </div>
 </nav>
 
+<main>
 
-<!-- =========================
-     HERO
-========================== -->
+  <section class="hero" id="profile">
+    <div class="container">
+      <div class="row align-items-center g-5">
 
-<section class="about-hero" id="profile">
-
-  <div class="container">
-
-    <div class="row align-items-center g-5">
-
-      <div class="col-lg-8">
-
-        <div class="eyebrow">
-          <span></span>
-          Professional Portfolio
-        </div>
-
-        <h1 class="hero-title">
-          Restu Slamet
-          <br>
-          <span class="gradient-text">
-            Triwijono
+        <div class="col-lg-7 reveal">
+          <span class="eyebrow">
+            <span>●</span> Professional Portfolio
           </span>
-        </h1>
 
-        <p class="hero-description">
-
-          Senior IT professional with extensive experience across
-          <strong>Data Analytics, Data Engineering, Fullstack Development,
-          IT Business Development, and Enterprise Infrastructure Architecture.</strong>
-
-          Experienced in designing enterprise software, financial technology
-          ecosystems, automated data pipelines, and scalable digital platforms.
-
-        </p>
-
-      </div>
-
-
-      <div class="col-lg-4">
-
-        <div class="profile-card">
-
-          <div class="profile-initial">
-            RT
-          </div>
-
-          <div class="profile-name">
-            Restu Slamet Triwijono
-          </div>
-
-          <div class="profile-role">
-            S.Kom., M.T.<br>
-            IT Business Development Specialist<br>
-            Enterprise Infrastructure Architect
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PROFESSIONAL SUMMARY
-========================== -->
-
-<section class="section">
-
-  <div class="container">
-
-    <div class="row align-items-center g-5">
-
-      <div class="col-lg-5">
-
-        <div class="eyebrow">
-          <span></span>
-          Professional Summary
-        </div>
-
-        <h2 class="section-title mt-4">
-          Technology meets
-          <span class="gradient-text">
-            business strategy.
-          </span>
-        </h2>
-
-      </div>
-
-      <div class="col-lg-7">
-
-        <p class="section-description">
-
-          Highly dedicated and versatile Senior IT professional with a
-          comprehensive track record in Data Analytics, Data Engineering,
-          and Fullstack Development.
-
-        </p>
-
-        <p class="section-description">
-
-          Expert in designing national-scale enterprise software,
-          financial technology ecosystems, and automated data pipelines.
-
-          Proficient in optimizing business metrics using Python,
-          modern JavaScript frameworks, robust database systems,
-          and secure cloud infrastructure.
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     TECHNICAL SKILLS
-========================== -->
-
-<section class="section" id="skills">
-
-  <div class="container">
-
-    <div class="text-center mb-5">
-
-      <div class="eyebrow">
-        <span></span>
-        Technical Skills
-      </div>
-
-      <h2 class="section-title mt-4">
-        Engineering
-        <span class="gradient-text">
-          toolkit.
-        </span>
-      </h2>
-
-    </div>
-
-
-    <div class="row g-4">
-
-      <!-- Data -->
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M4 19V5M4 19h16"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <path
-                d="M7 15l3-4 3 2 5-7"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-
-          </div>
-
-          <h3>Data Analytics</h3>
-
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>Pandas</li>
-            <li>NumPy</li>
-            <li>Data Analysis</li>
-            <li>Data Engineering</li>
-            <li>Data Pipelines</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- Fullstack -->
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-
-          </div>
-
-          <h3>Fullstack Development</h3>
-
-          <ul class="skill-list">
-            <li>NestJS</li>
-            <li>Next.js</li>
-            <li>React</li>
-            <li>React Native</li>
-            <li>Flutter</li>
-            <li>PHP / WordPress</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- Database -->
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <ellipse
-                cx="12"
-                cy="6"
-                rx="7"
-                ry="3"
-                stroke="white"
-                stroke-width="2"
-              />
-
-              <path
-                d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"
-                stroke="white"
-                stroke-width="2"
-              />
-
-              <path
-                d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"
-                stroke="white"
-                stroke-width="2"
-              />
-
-            </svg>
-
-          </div>
-
-          <h3>Database &amp; Big Data</h3>
-
-          <ul class="skill-list">
-            <li>MySQL</li>
-            <li>PostgreSQL</li>
-            <li>NoSQL</li>
-            <li>Relational Database</li>
-            <li>Database Clusters</li>
-            <li>Fintech Platforms</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- DevOps -->
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M5 18h14M7 14h10M9 10h6M12 6v12"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-
-          </div>
-
-          <h3>Infrastructure &amp; DevOps</h3>
-
-          <ul class="skill-list">
-            <li>Docker</li>
-            <li>Microservices</li>
-            <li>Linux Ubuntu</li>
-            <li>CI/CD</li>
-            <li>Cloud Infrastructure</li>
-            <li>Network Infrastructure</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PROFESSIONAL EXPERIENCE
-========================== -->
-
-<section class="section" id="experience">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-4">
-
-        <div class="eyebrow">
-          <span></span>
-          Career
-        </div>
-
-        <h2 class="section-title mt-4">
-          Professional
-          <span class="gradient-text">
-            Experience.
-          </span>
-        </h2>
-
-        <p class="section-description">
-          More than two decades of experience spanning logistics,
-          telecommunications, enterprise IT, data platforms and
-          digital business development.
-        </p>
-
-      </div>
-
-
-      <div class="col-lg-8">
-
-        <div class="timeline">
-
-          <!-- 2005-2023 -->
-          <div class="timeline-item">
-
-            <div class="timeline-period">
-              2005 — 2023
-            </div>
-
-            <h3>
-              IT Business Development Program Specialist
-            </h3>
-
-            <div class="timeline-company">
-              PT Pos Indonesia (Persero)
-            </div>
-
-            <p>
-              Engineered data-driven marketing and operational analytics
-              systems leveraging Artificial Intelligence to optimize
-              digital marketing workflows and predict supply chain
-              capacities nationwide.
-
-              Architected enterprise-grade applications and responsive
-              cross-platform interfaces using Python, PHP, NestJS,
-              Next.js, React Native and Flutter.
-
-              Containerized decentralized workloads using Docker
-              Container and Microservices patterns to improve
-              scalability and deployment velocity.
-            </p>
-
-          </div>
-
-
-          <!-- 2010-2023 -->
-          <div class="timeline-item">
-
-            <div class="timeline-period">
-              2010 — 2023
-            </div>
-
-            <h3>
-              Digital Platform Division Lead / Engineer
-            </h3>
-
-            <div class="timeline-company">
-              PT Pos Indonesia (Persero)
-            </div>
-
-            <p>
-              Designed and managed highly reliable relational
-              MySQL and PostgreSQL databases together with
-              non-relational database clusters supporting
-              high-throughput Financial Technology transaction
-              platforms.
-
-              Built secure and high-performance RESTful APIs
-              and backend services using Flask, Django and FastAPI,
-              together with customized WordPress enterprise solutions.
-            </p>
-
-          </div>
-
-
-          <!-- 2000-2005 -->
-          <div class="timeline-item">
-
-            <div class="timeline-period">
-              2000 — 2005
-            </div>
-
-            <h3>
-              Logistics &amp; Forwarding Specialist
-            </h3>
-
-            <div class="timeline-company">
-              Pos Indonesia Logistics
-            </div>
-
-            <p>
-              Managed corporate freight forwarding operations and
-              streamlined Peer-to-Peer logistics integrations,
-              significantly increasing supply chain transparency
-              and operational efficiency.
-            </p>
-
-          </div>
-
-
-          <!-- Infrastructure -->
-          <div class="timeline-item">
-
-            <div class="timeline-period">
-              Network Infrastructure &amp; IT
-            </div>
-
-            <h3>
-              Network Infrastructure &amp; IT Engineer
-            </h3>
-
-            <div class="timeline-company">
-              Pos Indonesia Network Infrastructure
-            </div>
-
-            <p>
-              Designed, configured and maintained secure nationwide
-              Linux Ubuntu servers and corporate NAS network
-              configurations, supporting 99.9% uptime for
-              cross-regional data communications.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CORE COMPETENCIES
-========================== -->
-
-<section class="section">
-
-  <div class="container">
-
-    <div class="text-center mb-5">
-
-      <div class="eyebrow">
-        <span></span>
-        Core Competencies
-      </div>
-
-      <h2 class="section-title mt-4">
-        Beyond
-        <span class="gradient-text">
-          coding.
-        </span>
-      </h2>
-
-    </div>
-
-
-    <div class="row g-4">
-
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card text-center">
-
-          <h3>
-            Strategic IT
-            Communication
-          </h3>
-
-          <p class="section-description mb-0">
-            Connecting technology initiatives with organizational
-            and business objectives.
+          <h1>
+            Restu Slamet<br>
+            <span class="gradient-text">Triwijono</span>
+          </h1>
+
+          <p class="lead-copy mb-4">
+            S.Kom., M.T. — Senior IT professional specializing in
+            Data Analytics, Data Engineering, Fullstack Development,
+            enterprise architecture, and digital platform engineering.
           </p>
 
-        </div>
-
-      </div>
-
-
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card text-center">
-
-          <h3>
-            Enterprise
-            Architecture
-          </h3>
-
-          <p class="section-description mb-0">
-            Designing scalable systems and enterprise-grade
-            digital platforms.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card text-center">
-
-          <h3>
-            Data-Driven
-            Optimization
-          </h3>
-
-          <p class="section-description mb-0">
-            Turning operational data into actionable business
-            insights and measurable improvements.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="col-md-6 col-lg-3">
-
-        <div class="skill-card text-center">
-
-          <h3>
-            Agile
-            Collaboration
-          </h3>
-
-          <p class="section-description mb-0">
-            Cross-functional collaboration and alignment across
-            technical and business teams.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     EDUCATION
-========================== -->
-
-<section class="section" id="education">
-
-  <div class="container">
-
-    <div class="text-center mb-5">
-
-      <div class="eyebrow">
-        <span></span>
-        Formal Education
-      </div>
-
-      <h2 class="section-title mt-4">
-        Academic
-        <span class="gradient-text">
-          Foundation.
-        </span>
-      </h2>
-
-    </div>
-
-
-    <div class="row g-4">
-
-      <div class="col-lg-6">
-
-        <div class="education-card">
-
-          <div class="education-year">
-            2003 — 2005
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#experience" class="btn-gradient">Explore Experience</a>
+            <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">Contact Me</a>
           </div>
+        </div>
 
-          <h3>
-            Master of Engineering (M.T.)
-          </h3>
+        <div class="col-lg-5 reveal">
+          <div class="profile-stage" aria-label="Profile photo of Restu Slamet Triwijono">
+            <div class="profile-ring">
+              <img
+                id="profilePhoto"
+                class="profile-photo"
+                src="restu_02.jpg"
+                alt="Restu Slamet Triwijono"
+                loading="eager"
+                onerror="showProfileFallback()"
+              >
+              <div id="profileFallback" class="profile-fallback" aria-hidden="true">RT</div>
+            </div>
 
-          <h4>
-            Institut Teknologi Bandung — ITB
-          </h4>
+            <div class="profile-badge">
+              <strong>Senior IT Professional</strong>
+              <span>Data • Engineering • Fullstack</span>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5 reveal">
+          <div class="glass-card">
+            <div class="icon-box">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21a8 8 0 0 0-16 0"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="section-label">Professional Profile</div>
+            <h2 class="mb-3">Building technology that creates measurable value.</h2>
+            <p class="section-copy">
+              Highly dedicated and versatile Senior IT professional with a comprehensive
+              track record across Data Analytics, Data Engineering, Fullstack Development,
+              enterprise software, fintech ecosystems, automated data pipelines, and
+              secure infrastructure.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div class="glass-card">
+            <div class="section-label">Core Competencies</div>
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <div class="competency">Strategic IT Communication &amp; Leadership</div>
+                <div class="competency">Enterprise Architecture &amp; System Design</div>
+              </div>
+              <div class="col-md-6">
+                <div class="competency">Data-Driven Business Optimization</div>
+                <div class="competency">Agile Team Collaboration &amp; Cross-functional Alignment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="reveal mb-5">
+        <div class="section-label">Technology Stack</div>
+        <h2>Technical Skills</h2>
+        <p class="section-copy">
+          A practical technology ecosystem covering analytics, application engineering,
+          databases, infrastructure, and DevOps.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="glass-card">
+            <div class="icon-box">01</div>
+            <h3 class="h5">Data Analytics</h3>
+            <p class="text-secondary">Analytics and data processing for business and operational optimization.</p>
+            <div class="skill-list">
+              <span class="skill">Python</span>
+              <span class="skill">Pandas</span>
+              <span class="skill">NumPy</span>
+              <span class="skill">AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="glass-card">
+            <div class="icon-box">02</div>
+            <h3 class="h5">Fullstack Development</h3>
+            <p class="text-secondary">Enterprise applications, APIs and cross-platform interfaces.</p>
+            <div class="skill-list">
+              <span class="skill">Flask</span>
+              <span class="skill">Django</span>
+              <span class="skill">FastAPI</span>
+              <span class="skill">NestJS</span>
+              <span class="skill">Next.js</span>
+              <span class="skill">React Native</span>
+              <span class="skill">Flutter</span>
+              <span class="skill">PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="glass-card">
+            <div class="icon-box">03</div>
+            <h3 class="h5">Database &amp; Big Data</h3>
+            <p class="text-secondary">Reliable data platforms for high-throughput enterprise workloads.</p>
+            <div class="skill-list">
+              <span class="skill">MySQL</span>
+              <span class="skill">PostgreSQL</span>
+              <span class="skill">NoSQL</span>
+              <span class="skill">Data Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="glass-card">
+            <div class="icon-box">04</div>
+            <h3 class="h5">Infrastructure &amp; DevOps</h3>
+            <p class="text-secondary">Scalable deployment and secure infrastructure engineering.</p>
+            <div class="skill-list">
+              <span class="skill">Docker</span>
+              <span class="skill">Microservices</span>
+              <span class="skill">Linux Ubuntu</span>
+              <span class="skill">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="reveal mb-5">
+        <div class="section-label">Career Journey</div>
+        <h2>Professional Experience</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">2005 — 2023</div>
+          <h3>IT Business Development Program Specialist</h3>
+          <div class="timeline-company">PT Pos Indonesia (Persero)</div>
           <p>
-            Fokus pada arsitektur sistem perangkat lunak
-            enterprise dan tata kelola teknologi informasi.
+            Data Analyst &amp; Strategy, using AI-enabled data-driven marketing and operational
+            analytics. Fullstack development for enterprise-grade applications and cross-platform
+            interfaces using Python, PHP, NestJS, Next.js, React Native and Flutter.
+            Docker and Microservices patterns were used for scalable deployment.
           </p>
+        </div>
 
+        <div class="timeline-item reveal">
+          <div class="timeline-date">2010 — 2023</div>
+          <h3>Digital Platform Division Lead / Engineer</h3>
+          <div class="timeline-company">PT Pos Indonesia (Persero)</div>
+          <p>
+            Designed and managed MySQL, PostgreSQL and non-relational database clusters
+            supporting high-throughput fintech transaction platforms. Built secure RESTful
+            APIs and backend services using Python frameworks and customized WordPress
+            enterprise solutions.
+          </p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">2000 — 2005</div>
+          <h3>Logistics &amp; Forwarding Specialist</h3>
+          <div class="timeline-company">Pos Indonesia Logistics</div>
+          <p>
+            Managed corporate freight forwarding operations and streamlined P2P logistics
+            integrations to improve supply-chain transparency and operational efficiency.
+          </p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Professional Engineering Experience</div>
+          <h3>Network Infrastructure &amp; IT Engineer</h3>
+          <div class="timeline-company">Pos Indonesia Network Infrastructure</div>
+          <p>
+            Designed, configured and maintained nationwide Linux Ubuntu servers and
+            corporate NAS network configurations, supporting 99.9% uptime for
+            cross-regional data communications.
+          </p>
         </div>
 
       </div>
+    </div>
+  </section>
 
+  <section class="section" id="education">
+    <div class="container">
+      <div class="reveal mb-5">
+        <div class="section-label">Academic Background</div>
+        <h2>Education</h2>
+      </div>
 
-      <div class="col-lg-6">
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="glass-card">
+            <div class="icon-box">M.T.</div>
+            <div class="section-label">2003 — 2005</div>
+            <h3 class="h4">Master of Engineering in Information Technology</h3>
+            <p class="mb-2">Institut Teknologi Bandung (ITB)</p>
+            <p class="text-secondary mb-0">
+              Focus on enterprise software architecture and information technology governance.
+            </p>
+          </div>
+        </div>
 
-        <div class="education-card">
+        <div class="col-lg-6 reveal">
+          <div class="glass-card">
+            <div class="icon-box">S.Kom.</div>
+            <div class="section-label">2000 — 2003</div>
+            <h3 class="h4">Bachelor of Computer Science</h3>
+            <p class="mb-2">Universitas Gadjah Mada (UGM)</p>
+            <p class="text-secondary mb-0">
+              Programming, algorithms and data structures, computer networking and databases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="education-year">
-            2000 — 2003
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="section-label">Let's Connect</div>
+            <h2 class="mb-3">Let's build something meaningful with technology.</h2>
+            <p class="mb-0">
+              Open to professional collaboration, technology projects,
+              data initiatives, enterprise applications, and digital platform development.
+            </p>
           </div>
 
-          <h3>
-            Bachelor of Computer Science (S.Kom.)
-          </h3>
-
-          <h4>
-            Universitas Gadjah Mada — UGM
-          </h4>
-
-          <p>
-            Mempelajari pemrograman, algoritma struktur data,
-            jaringan komputer dan basis data.
-          </p>
-
+          <div class="col-lg-5">
+            <div class="contact-item mb-3">
+              <strong>Email</strong><br>
+              <a href="mailto:restu.jogja@gmail.com" class="text-white">restu.jogja@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Phone</strong><br>
+              <a href="tel:+628159464170" class="text-white">+62 815-9464-170</a>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================== -->
-
-<section class="section">
-
-  <div class="container">
-
-    <div class="contact-panel">
-
-      <div class="eyebrow">
-        <span></span>
-        Let's Connect
-      </div>
-
-      <h2 class="section-title mt-4">
-        Let's build something
-        <span class="gradient-text">
-          meaningful.
-        </span>
-      </h2>
-
-      <p class="section-description mx-auto mb-4">
-        Open to opportunities involving data analytics,
-        data engineering, fullstack development, enterprise
-        architecture and digital business transformation.
-      </p>
-
-
-      <div class="d-flex flex-wrap justify-content-center">
-
-        <div class="contact-item">
-          <strong>Email:</strong>
-          restu.jogja@gmail.com
-        </div>
-
-        <div class="contact-item">
-          <strong>Phone:</strong>
-          (+62) 815-9464-170
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
+</main>
 
 <footer>
-
-  <div class="container">
-
-    <div class="d-flex flex-column flex-md-row
-                justify-content-between
-                align-items-center gap-3">
-
-      <a href="index.html" class="brand">
-
-        <svg
-          class="brand-logo"
-          viewBox="0 0 40 40"
-          fill="none"
-        >
-          <path
-            d="M20 2L23.5 12.5L34 8L27.5 17.5L38 20L27.5 22.5L34 32L23.5 27.5L20 38L16.5 27.5L6 32L12.5 22.5L2 20L12.5 17.5L6 8L16.5 12.5L20 2Z"
-            fill="url(#footerGradient)"
-          />
-
-          <defs>
-            <linearGradient
-              id="footerGradient"
-              x1="2"
-              y1="2"
-              x2="38"
-              y2="38"
-            >
-              <stop stop-color="#8B5CF6"/>
-              <stop offset="1" stop-color="#4169E1"/>
-            </linearGradient>
-          </defs>
-
-        </svg>
-
-        MY PERSONAL &amp; PORTFOLIO
-
-      </a>
-
-      <span>
-        © 2026 Restu Slamet Triwijono. All rights reserved.
-      </span>
-
-    </div>
-
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    <span>© <span id="year"></span> MY PERSONAL &amp; PORTFOLIO</span>
+    <span>Restu Slamet Triwijono, S.Kom., M.T. — Professional Portfolio</span>
   </div>
-
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+  function showProfileFallback() {
+    const photo = document.getElementById("profilePhoto");
+    const fallback = document.getElementById("profileFallback");
 
-  /*
-   * Smooth scrolling
-   */
+    if (photo) photo.style.display = "none";
+    if (fallback) {
+      fallback.style.display = "flex";
+      fallback.setAttribute("aria-hidden", "false");
+    }
+  }
 
-  document.querySelectorAll(
-    'a[href^="#"]'
-  ).forEach(function(link) {
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    link.addEventListener(
-      "click",
-      function(event) {
-
-        const targetId =
-          this.getAttribute("href");
-
-        const target =
-          document.querySelector(targetId);
-
-        if (!target) {
-          return;
-        }
-
-        event.preventDefault();
-
-        const navbar =
-          document.querySelector(".navbar");
-
-        const offset =
-          navbar ? navbar.offsetHeight : 0;
-
-        const targetPosition =
-          target.getBoundingClientRect().top +
-          window.scrollY -
-          offset;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth"
-        });
-
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
       }
-    );
+    });
+  }, { threshold: 0.12 });
 
-  });
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-
-  /*
-   * Reveal animation
-   */
-
-  const observer =
-    new IntersectionObserver(
-      function(entries) {
-
-        entries.forEach(function(entry) {
-
-          if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform =
-              "translateY(0)";
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold: .12
+  document.querySelectorAll(".navbar .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("mainNav");
+      if (menu.classList.contains("show")) {
+        bootstrap.Collapse.getOrCreateInstance(menu).hide();
       }
-    );
-
-
-  document.querySelectorAll(
-    ".skill-card, .timeline-item, .education-card"
-  ).forEach(function(element) {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-      "translateY(20px)";
-
-    element.style.transition =
-      "opacity .7s ease, transform .7s ease";
-
-    observer.observe(element);
-
+    });
   });
-
 </script>
 
 </body>
